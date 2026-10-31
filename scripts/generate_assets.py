@@ -23,7 +23,22 @@ for y in range(H):
   t=y/(H-1);v=int(52-15*t);d.line((0,y,W,y),fill=(v,v+1,v+2))
 d.line((75,75,1005,75),fill=GOLD,width=8);d.line((1005,75,1005,1845),fill=GOLD,width=8)
 d.text((95,145),"NIKKI",font=font(115,True),fill=GOLD);d.text((430,145),"NITRO",font=font(115,True),fill=WHITE);d.text((665,270),"Coffee",font=font(55,True),fill=GOLD)
-portrait=Image.open(A/"pegah-karimi-cutout.png").convert("RGBA");portrait.thumbnail((720,760),Image.Resampling.LANCZOS);im.paste(portrait,((W-portrait.width)//2,370),portrait)
+# Use a tighter head-and-upper-body crop for the saved phone card.
+portrait_source=Image.open(A/"pegah-karimi-cutout.png").convert("RGBA")
+portrait=portrait_source.crop((105,0,955,1040))
+portrait.thumbnail((690,760),Image.Resampling.LANCZOS)
+im.paste(portrait,((W-portrait.width)//2+70,285),portrait)
+
+# Simple coffee cue, kept away from the face and the QR quiet zone.
+cup_x,cup_y=92,665
+d.ellipse((cup_x-28,cup_y-35,cup_x+190,cup_y+183),fill="#2D2F31",outline=GOLD,width=5)
+d.rounded_rectangle((cup_x+12,cup_y+22,cup_x+128,cup_y+120),radius=15,fill=GOLD)
+d.ellipse((cup_x+110,cup_y+45,cup_x+170,cup_y+105),outline=GOLD,width=18)
+d.line((cup_x+15,cup_y+139,cup_x+150,cup_y+139),fill=GOLD,width=8)
+for sx in (cup_x+35,cup_x+73,cup_x+109):
+  d.arc((sx,cup_y-22,sx+34,cup_y+37),190,345,fill=GOLD,width=7)
+d.text((88,865),"NITRO COFFEE",font=font(28,True),fill=GOLD)
+d.text((88,900),"FOR EVERY EVENT",font=font(22,True),fill=WHITE)
 d.rounded_rectangle((100,1020,980,1195),radius=35,fill="#292B2D",outline=GOLD,width=4)
 center(d,1044,"DR. PEGAH KARIMI",font(64,True),WHITE)
 center(d,1120,"MANAGING DIRECTOR",font(31,True),GOLD)
