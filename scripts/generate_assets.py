@@ -24,7 +24,15 @@ for y in range(H):
 d.line((75,75,1005,75),fill=GOLD,width=8);d.line((1005,75,1005,1845),fill=GOLD,width=8)
 d.text((95,145),"NIKKI",font=font(115,True),fill=GOLD);d.text((430,145),"NITRO",font=font(115,True),fill=WHITE);d.text((665,270),"Coffee",font=font(55,True),fill=GOLD)
 portrait=Image.open(A/"pegah-karimi-cutout.png").convert("RGBA");portrait.thumbnail((720,760),Image.Resampling.LANCZOS);im.paste(portrait,((W-portrait.width)//2,370),portrait)
-d.rounded_rectangle((100,1040,980,1220),radius=35,fill="#292B2D",outline=GOLD,width=4);center(d,1065,"DR. PEGAH KARIMI",font(64,True),WHITE);center(d,1140,"MANAGING DIRECTOR",font(31,True),GOLD)
-d.rounded_rectangle((155,1265,925,1760),radius=48,fill=WHITE,outline=GOLD,width=10);q=Image.open(A/"card-qr.png").resize((650,650),Image.Resampling.NEAREST);im.paste(q,(215,1190))
-center(d,1780,"SCAN TO CONNECT",font(36,True),GOLD);center(d,1830,"NIKKINITROCOFFEE.COM",font(27,True),WHITE)
+d.rounded_rectangle((100,1020,980,1195),radius=35,fill="#292B2D",outline=GOLD,width=4)
+center(d,1044,"DR. PEGAH KARIMI",font(64,True),WHITE)
+center(d,1120,"MANAGING DIRECTOR",font(31,True),GOLD)
+
+# Keep the QR and all captions fully inside the 1080 x 1920 phone canvas.
+# The previous version let the code overlap the captions at the bottom.
+d.rounded_rectangle((178,1240,902,1782),radius=48,fill=WHITE,outline=GOLD,width=10)
+q=Image.open(A/"card-qr.png").resize((500,500),Image.Resampling.NEAREST)
+im.paste(q,(290,1261))
+center(d,1810,"SCAN TO CONNECT",font(36,True),GOLD)
+center(d,1860,"NIKKINITROCOFFEE.COM",font(27,True),WHITE)
 im.save(A/"phone-card.png",optimize=True)
