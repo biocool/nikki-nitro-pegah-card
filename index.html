@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Dr. Pegah Karimi — Nikki Nitro Coffee</title>
+  <meta name="description" content="Connect with Dr. Pegah Karimi, Managing Director at Nikki Nitro Coffee." />
+  <meta name="theme-color" content="#343638" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Pegah · NN" />
+  <meta property="og:title" content="Dr. Pegah Karimi — Nikki Nitro Coffee" />
+  <meta property="og:description" content="Nitro coffee for every event." />
+  <meta property="og:image" content="assets/phone-card.png" />
+  <link rel="canonical" href="https://biocool.github.io/nikki-nitro-pegah-card/" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="assets/icon-192.png" />
+  <link rel="apple-touch-icon" href="assets/icon-180.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;1,700&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <main class="card">
+    <header class="hero">
+      <div class="brand" aria-label="Nikki Nitro Coffee">
+        <span class="bolt">ϟ</span>
+        <div><strong><i>NIKKI</i> NITRO</strong><em>Coffee</em></div>
+      </div>
+      <div class="hero-copy">
+        <p class="kicker">NITRO COFFEE FOR EVERY EVENT</p>
+        <h1>Dr. Pegah<br /><span>Karimi</span></h1>
+        <p class="role">Managing Director</p>
+      </div>
+      <div class="portrait-wrap">
+        <div class="portrait-halo"></div>
+        <img src="assets/pegah-karimi-cutout.png" alt="Dr. Pegah Karimi" />
+      </div>
+      <span class="hero-line" aria-hidden="true"></span>
+    </header>
+
+    <section class="contact-list" aria-label="Contact information">
+      <a href="tel:+18188730931" class="contact"><span class="icon">☎</span><span><small>PHONE</small><b>+1 818 873 0931</b></span><i>›</i></a>
+      <a href="mailto:sales@nikkinitro.coffee" class="contact"><span class="icon">@</span><span><small>EMAIL</small><b>sales@nikkinitro.coffee</b></span><i>›</i></a>
+      <a href="https://nikkinitrocoffee.com" target="_blank" rel="noopener" class="contact"><span class="icon">◎</span><span><small>WEBSITE</small><b>nikkinitrocoffee.com</b></span><i>›</i></a>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=California%2C%20United%20States" target="_blank" rel="noopener" class="contact"><span class="icon">⌖</span><span><small>LOCATION</small><b>California, United States</b></span><i>›</i></a>
+    </section>
+
+    <section class="actions" aria-label="Card actions">
+      <button class="primary" id="save-contact">Save Contact</button>
+      <button id="install-app" hidden>Install App</button>
+      <button id="share-card">Share</button>
+      <button id="show-qr">QR Code</button>
+    </section>
+    <p class="install-help" id="install-help">On iPhone: tap Share, then “Add to Home Screen.”</p>
+    <footer><span>ϟ</span> PULL FRESH. POUR BOLD. <span>ϟ</span></footer>
+  </main>
+
+  <div class="modal" id="qr-modal" hidden role="dialog" aria-modal="true" aria-label="QR code">
+    <button class="backdrop" aria-label="Close"></button>
+    <div class="qr-panel">
+      <button class="close" aria-label="Close">×</button>
+      <p>SCAN TO CONNECT</p>
+      <h2>Dr. Pegah Karimi</h2>
+      <img src="assets/card-qr.png" alt="QR code for this business card" />
+      <button class="primary" id="download-card">Save Phone Card</button>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
